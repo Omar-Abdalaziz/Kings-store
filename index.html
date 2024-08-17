@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kings store</title>
+    <meta name="description" content="اكتشف عالم الفخامة والأناقة مع متجرنا الإلكتروني. تسوق أحدث المنتجات الفاخرة بأفضل الأسعار.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <header class="bg-white shadow-md fixed w-full z-50 transition-all duration-300" id="main-header">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <div class="logo text-2xl font-bold text-gold">
+                    <a href="#home" class="flex items-center">
+                        Kings store
+                    </a>
+                </div>
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="#home" class="nav-link">الرئيسية</a></li>
+                    <span></span>
+                    <li><a href="#categories" class="nav-link">التصنيفات</a></li>
+                    <li><a href="#products" class="nav-link">المنتجات</a></li>
+                    <li><a href="#about" class="nav-link">من نحن</a></li>
+                    <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+                </ul>
+                <div class="flex items-center space-x-4">
+                    <div class="search-container">
+                        <input type="text" placeholder="ابحث عن منتج..." class="search-input">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-icon cursor-pointer relative group">
+                        
+                        <i class="fas fa-user text-xl hover:text-gold transition"></i>
+                        <div class="user-menu absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden group-hover:block">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">تسجيل الدخول</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">إنشاء حساب</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">حسابي</a>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-icon cursor-pointer relative" id="cart-icon">
+                        <i class="fas fa-shopping-cart text-xl hover:text-gold transition"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">0</span>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gold focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4">
+            <a href="#home" class="block py-2 hover:text-gold transition">الرئيسية</a>
+            <a href="#categories" class="block py-2 hover:text-gold transition">التصنيفات</a>
+            <a href="#products" class="block py-2 hover:text-gold transition">المنتجات</a>
+            <a href="#about" class="block py-2 hover:text-gold transition">من نحن</a>
+            <a href="#contact" class="block py-2 hover:text-gold transition">اتصل بنا</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <section id="home" class="hero-section h-screen flex items-center justify-center bg-cover bg-center relative" style="background-image: url('image.jpg');">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="text-center text-white relative z-10">
+                <h1 class="text-5xl font-bold mb-4 leading-tight">Kings Store مرحبًا بكم في عالم</h1>
+                <p class="text-xl mb-8">اكتشف مجموعتنا الحصرية من المنتجات الفاخرة</p>
+                <a href="#products" class="bg-gold text-white px-8 py-3 rounded-full hover:bg-yellow-600 transition transform hover:scale-105">تسوق الآن</a>
+            </div>
+        </section>
+
+        <section id="categories" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">تصفح حسب الفئات</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="category-card">
+                        <img src="https://img.freepik.com/free-vector/realistic-watches-set_1284-11684.jpg?t=st=1723759816~exp=1723763416~hmac=d61e5d60a6abe6ce4fd6a5728e706cb23445785f2836ec9692eefcee918be323&w=740" alt="ساعات" class="rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mt-4">ساعات</h3>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://img.freepik.com/free-vector/realistic-gold-silver-jewelry-display-black-mannequins-stands-grey-surface_1284-9644.jpg?uid=R157958759&ga=GA1.1.1998087053.1717085349&semt=ais_hybrid" alt="مجوهرات" class="rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mt-4">مجوهرات</h3>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://img.freepik.com/free-photo/small-purse-studio-still-life_23-2151046467.jpg?t=st=1723759962~exp=1723763562~hmac=0d2b7a6282cbf024234833dbfe1986464f0b806c7ba88c4ea07435ca2d517a71&w=740" alt="حقائب" class="rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mt-4">حقائب</h3>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://img.freepik.com/free-photo/view-model-career-kit-still-life_23-2150229760.jpg?t=st=1723760242~exp=1723763842~hmac=9ae75af09e787605a0a33a4447c698509fbd425e4f7219e9bb70be8412b13c6e&w=740" alt="إكسسوارات" class="rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mt-4">إكسسوارات</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">منتجاتنا المميزة</h2>
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex space-x-4">
+                        <button class="filter-btn active" data-filter="all">الكل</button>
+                        <span></span>
+                        <button class="filter-btn" data-filter="watches">ساعات</button>
+                        <button class="filter-btn" data-filter="jewelry">مجوهرات</button>
+                        <button class="filter-btn" data-filter="bags">حقائب</button>
+                        <button class="filter-btn" data-filter="accessories">إكسسوارات</button>
+                    </div>
+                    <div class="sort-container">
+                        <select id="sort-select" class="bg-white border border-gray-300 rounded-md px-4 py-2">
+                            <option value="featured">مميز</option>
+                            <option value="price-low-high">السعر: من الأقل إلى الأعلى</option>
+                            <option value="price-high-low">السعر: من الأعلى إلى الأقل</option>
+                            <option value="newest">الأحدث</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="product-grid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- سيتم إضافة المنتجات هنا ديناميكيًا -->
+                </div>
+                <div class="text-center mt-12">
+                    <button id="load-more" class="bg-gold text-white px-8 py-3 rounded-full hover:bg-yellow-600 transition transform hover:scale-105">تحميل المزيد</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16" dir="rtl">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">من نحن</h2>
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <img src="https://img.freepik.com/free-photo/3d-illustration-smartphone-with-store-screen-with-gift-boxes-side_58466-14580.jpg?t=st=1723761084~exp=1723764684~hmac=49e5d8acbdee847d1a8ccb9c60859866d7b60b22b00d259be9ba3783db4f54b9&w=996" alt="عن متجرنا" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="md:w-1/2 md:pr-8">
+                        <p class="text-lg leading-relaxed mb-6">
+                            متجر الملوك هو وجهتك الأولى للحصول على أرقى المنتجات وأفضل الخدمات. نحن نسعى جاهدين لتقديم تجربة تسوق استثنائية لعملائنا الكرام، مع التركيز على الجودة والأناقة والتميز في كل التفاصيل.
+                        </p>
+                        <p class="text-lg leading-relaxed mb-6">
+                            نفخر بتقديم مجموعة حصرية من المنتجات الفاخرة من أشهر العلامات التجارية العالمية، مع ضمان أصالة كل قطعة وجودتها العالية.
+                        </p>
+                        <a href="#" class="bg-gold text-white px-8 py-3 rounded-full hover:bg-yellow-600 transition transform hover:scale-105">اقرأ المزيد عنا</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">اتصل بنا</h2>
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block mb-2">الاسم</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2">البريد الإلكتروني</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block mb-2">الرسالة</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold" required></textarea>
+                            </div>
+                            <button type="submit" class="bg-gold text-white px-8 py-3 rounded-full hover:bg-yellow-600 transition transform hover:scale-105">إرسال الرسالة</button>
+                        </form>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <h3 class="text-xl font-semibold mb-4">معلومات الاتصال</h3>
+                        <p class="mb-2"><i class="fas fa-map-marker-alt mr-2 text-gold"></i> العنوان: شارع الفخامة، المدينة الذهبية</p>
+                        <p class="mb-2"><i class="fas fa-phone-alt mr-2 text-gold"></i>+ الهاتف: 201208404930</p>
+                        <p class="mb-2"><i class="fas fa-envelope mr-2 text-gold"></i> البريد الإلكتروني: info@kings.com</p>
+                        <div class="mt-6">
+                            <h4 class="text-lg font-semibold mb-2">تابعنا على</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-2xl hover:text-gold transition"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="text-2xl hover:text-gold transition"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-2xl hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-2xl hover:text-gold transition"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="py-16 bg-gold">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">اشترك في نشرتنا البريدية</h2>
+                <p class="text-white mb-8">كن أول من يعلم عن أحدث المنتجات والعروض الحصرية</p>
+                <form id="newsletter-form" class="flex justify-center">
+                    <input type="email" placeholder="أدخل بريدك الإلكتروني" class="px-4 py-2 rounded-l-full w-64 focus:outline-none">
+                    <button type="submit" class="bg-white text-gold px-6 py-2 rounded-r-full hover:bg-gray-100 transition">اشترك</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Kings Store</h3>
+                    <p class="mb-4">نحن نقدم أفضل المنتجات الفاخرة بأعلى جودة لعملائنا الكرام.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-gold transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-gold transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl hover:text-gold transition"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-gold transition">الرئيسية</a></li>
+                        <li><a href="#products" class="hover:text-gold transition">المنتجات</a></li>
+                        <li><a href="#offers" class="hover:text-gold transition">العروض</a></li>
+                        <li><a href="#about" class="hover:text-gold transition">من نحن</a></li>
+                        <li><a href="#contact" class="hover:text-gold transition">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">خدمة العملاء</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gold transition">الأسئلة الشائعة</a></li>
+                        <li><a href="#" class="hover:text-gold transition">سياسة الإرجاع</a></li>
+                        <li><a href="#" class="hover:text-gold transition">شروط الاستخدام</a></li>
+                        <li><a href="#" class="hover:text-gold transition">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="hover:text-gold transition">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">معلومات الاتصال</h3>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt mr-2 text-gold"></i>العنوان: شارع الفخامة، المدينة الذهبية في البطة المشمشية</p>
+                    <p class="mb-2"><i class="fas fa-phone-alt mr-2 text-gold"></i>+ الهاتف: 201208404930</p>
+                    <p class="mb-2"><i class="fas fa-envelope mr-2 text-gold"></i> البريد الإلكتروني: info@kings.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; Kings store جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="p-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">سلة التسوق</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="cart-items" class="space-y-4">
+                <!-- سيتم إضافة عناصر السلة هنا ديناميكيًا -->
+            </div>
+            <div class="mt-8">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="font-semibold">المجموع:</span>
+                    <span id="cart-total" class="font-bold">0 جنية</span>
+                </div>
+                <button id="checkout-btn" class="w-full bg-gold text-white px-4 py-2 rounded-full hover:bg-yellow-600 transition">الدفع</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="scroll-to-top" class="fixed bottom-8 right-8 bg-gold text-white w-12 h-12 rounded-full flex items-center justify-center cursor-pointer opacity-0 transition-opacity duration-300">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
